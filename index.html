@@ -1479,21 +1479,21 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===================== FIM MENU MOBILE =====================
 
 let carsData = [
-  {id:1, name:'Tesla Model 3', brand:'Tesla', grad:'grad-tesla-3', image:'/images/tesla-model3.jpg', emoji:'🚗', autonomy:'576km', autonomyNum:576, price:350, seats:5, battery:92, year:2024, accel:'3.1s', charge:'30 min', tag:'Long Range AWD', features:['Piloto Automático','Tela 15"','Supercharger'], lat:-23.5615, lng:-46.6556, status:'available'},
+  {id:1, name:'Tesla Model 3', brand:'Tesla', grad:'grad-tesla-3', image:'images/tesla-model3.jpg', emoji:'🚗', autonomy:'576km', autonomyNum:576, price:350, seats:5, battery:92, year:2024, accel:'3.1s', charge:'30 min', tag:'Long Range AWD', features:['Piloto Automático','Tela 15"','Supercharger'], lat:-23.5615, lng:-46.6556, status:'available'},
   
-  {id:2, name:'Tesla Model Y', brand:'Tesla', grad:'grad-tesla-y', image:'/images/tesla-model-y.jpg', emoji:'🚙', autonomy:'533km', autonomyNum:533, price:420, seats:7, battery:85, year:2024, accel:'3.7s', charge:'35 min', tag:'AWD Premium', features:['7 Lugares','Porta Falcon','FSD Ready'], lat:-23.5652, lng:-46.6971, status:'available'},
+  {id:2, name:'Tesla Model Y', brand:'Tesla', grad:'grad-tesla-y', image:'images/tesla-model-y.jpg', emoji:'🚙', autonomy:'533km', autonomyNum:533, price:420, seats:7, battery:85, year:2024, accel:'3.7s', charge:'35 min', tag:'AWD Premium', features:['7 Lugares','Porta Falcon','FSD Ready'], lat:-23.5652, lng:-46.6971, status:'available'},
   
-  {id:3, name:'BYD Dolphin', brand:'BYD', grad:'grad-byd-dolphin', image:'/images/byd-dolphin-standard.jpg', emoji:'🚗', autonomy:'340km', autonomyNum:340, price:180, seats:5, battery:78, year:2024, accel:'7.0s', charge:'40 min', tag:'Standard Range', features:['Econômico','City Car','V2L'], lat:-23.6012, lng:-46.6881, status:'available'},
+  {id:3, name:'BYD Dolphin', brand:'BYD', grad:'grad-byd-dolphin', image:'images/byd-dolphin-standard.jpg', emoji:'🚗', autonomy:'340km', autonomyNum:340, price:180, seats:5, battery:78, year:2024, accel:'7.0s', charge:'40 min', tag:'Standard Range', features:['Econômico','City Car','V2L'], lat:-23.6012, lng:-46.6881, status:'available'},
   
-  {id:4, name:'BYD Seal', brand:'BYD', grad:'grad-byd-seal', image:'/images/byd-seal.jpg', emoji:'🚗', autonomy:'570km', autonomyNum:570, price:280, seats:5, battery:95, year:2024, accel:'3.8s', charge:'32 min', tag:'Performance AWD', features:['CTB Technology','AWD','V2L 3.3kW'], lat:-23.5632, lng:-46.6930, status:'unavailable'},
+  {id:4, name:'BYD Seal', brand:'BYD', grad:'grad-byd-seal', image:'images/byd-seal.jpg', emoji:'🚗', autonomy:'570km', autonomyNum:570, price:280, seats:5, battery:95, year:2024, accel:'3.8s', charge:'32 min', tag:'Performance AWD', features:['CTB Technology','AWD','V2L 3.3kW'], lat:-23.5632, lng:-46.6930, status:'unavailable'},
   
-  {id:5, name:'Toyota bZ4X', brand:'Toyota', grad:'grad-toyota', image:'/images/toyota-bz4x.jpg', emoji:'🚙', autonomy:'460km', autonomyNum:460, price:310, seats:5, battery:88, year:2024, accel:'6.5s', charge:'30 min', tag:'AWD Luxury', features:['Solar Roof','AWD','Toyota Safety'], lat:-23.5831, lng:-46.6361, status:'available'},
+  {id:5, name:'Toyota bZ4X', brand:'Toyota', grad:'grad-toyota', image:'images/toyota-bz4x.jpg', emoji:'🚙', autonomy:'460km', autonomyNum:460, price:310, seats:5, battery:88, year:2024, accel:'6.5s', charge:'30 min', tag:'AWD Luxury', features:['Solar Roof','AWD','Toyota Safety'], lat:-23.5831, lng:-46.6361, status:'available'},
   
-  {id:6, name:'Volvo EX30', brand:'Volvo', grad:'grad-volvo', image:'/images/volvo-ex30.jpg', emoji:'🚗', autonomy:'480km', autonomyNum:480, price:390, seats:5, battery:91, year:2024, accel:'3.6s', charge:'26 min', tag:'Twin Motor', features:['SUV Compacto','Safety First','Google Built-In'], lat:-23.6020, lng:-46.6583, status:'available'},
+  {id:6, name:'Volvo EX30', brand:'Volvo', grad:'grad-volvo', image:'images/volvo-ex30.jpg', emoji:'🚗', autonomy:'480km', autonomyNum:480, price:390, seats:5, battery:91, year:2024, accel:'3.6s', charge:'26 min', tag:'Twin Motor', features:['SUV Compacto','Safety First','Google Built-In'], lat:-23.6020, lng:-46.6583, status:'available'},
   
-  {id:7, name:'Nissan Leaf', brand:'Nissan', grad:'grad-nissan', image:'/images/nissan-leaf.jpg', emoji:'🚗', autonomy:'385km', autonomyNum:385, price:200, seats:5, battery:72, year:2023, accel:'7.9s', charge:'40 min', tag:'Standard 40kWh', features:['ProPILOT','e-Pedal','CHAdeMO'], lat:-23.6341, lng:-46.6729, status:'available'},
+  {id:7, name:'Nissan Leaf', brand:'Nissan', grad:'grad-nissan', image:'images/nissan-leaf.jpg', emoji:'🚗', autonomy:'385km', autonomyNum:385, price:200, seats:5, battery:72, year:2023, accel:'7.9s', charge:'40 min', tag:'Standard 40kWh', features:['ProPILOT','e-Pedal','CHAdeMO'], lat:-23.6341, lng:-46.6729, status:'available'},
   
-  {id:8, name:'Renault Kwid E-Tech', brand:'Renault', grad:'grad-renault', image:'/images/renault-kwid-tech.jpg', emoji:'🚗', autonomy:'300km', autonomyNum:300, price:150, seats:5, battery:65, year:2024, accel:'9.8s', charge:'60 min', tag:'Urban Edition', features:['Mais Acessível','City Car','Ar-cond.'], lat:-23.5366, lng:-46.6697, status:'available'}
+  {id:8, name:'Renault Kwid E-Tech', brand:'Renault', grad:'grad-renault', image:'images/renault-kwid-tech.jpg', emoji:'🚗', autonomy:'300km', autonomyNum:300, price:150, seats:5, battery:65, year:2024, accel:'9.8s', charge:'60 min', tag:'Urban Edition', features:['Mais Acessível','City Car','Ar-cond.'], lat:-23.5366, lng:-46.6697, status:'available'}
 ];
 
 let fleet = [
