@@ -419,13 +419,64 @@ tbody tr:hover{background:var(--g50)}
 @media(max-width:768px){
   .features-strip-inner{grid-template-columns:1fr 1fr}
   .cars-grid{grid-template-columns:1fr 1fr}
-  .nav-links{display:none}
-  /* Adicionar botão hambúrguer e menu mobile */
-  .mobile-menu-btn{display:flex;background:var(--g100);border:none;width:40px;height:40px;border-radius:50%;align-items:center;justify-content:center;cursor:pointer}
-  .mobile-menu-btn i{font-size:20px;color:var(--g700)}
-  .nav-links-mobile{position:fixed;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);z-index:999;display:none}
-  .nav-links-mobile a{padding:12px;text-align:center;border-radius:12px}
-  .nav-links-mobile.show{display:flex}
+  
+  /* MENU MOBILE CORRETO */
+  .nav-links {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: flex !important;
+    background: var(--g100);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .mobile-menu-btn i {
+    font-size: 20px;
+    color: var(--g700);
+  }
+  
+  .nav-links-mobile {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    display: none;
+    border-bottom: 1px solid var(--g100);
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+  }
+  
+  .nav-links-mobile.show {
+    display: flex;
+  }
+  
+  .nav-links-mobile .nav-link {
+    padding: 12px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+  
+  .nav-actions .btn-outline,
+  .nav-actions .btn-primary {
+    display: none;
+  }
+  
+  /* FIM MENU MOBILE */
+  
   .form-grid-2{grid-template-columns:1fr}
   .form-grid-3{grid-template-columns:1fr}
   .payment-options{grid-template-columns:1fr}
@@ -526,6 +577,12 @@ tbody tr:hover{background:var(--g50)}
     padding:8px 12px;
     font-size:12px;
 }
+}
+/* FORÇA MENU MOBILE ESCONDIDO NO DESKTOP */
+@media (min-width: 769px) {
+  #nav-links-mobile {
+    display: none !important;
+  }
 }
 </style>
 </head>
@@ -673,13 +730,15 @@ tbody tr:hover{background:var(--g50)}
   </div>
 </div>
 
-<!-- PUBLIC NAVIGATION -->
+<!-- PUBLIC NAVIGATION CORRIGIDA -->
 <nav id="nav-public">
   <div class="nav-inner">
     <div class="nav-logo" onclick="showPage('home')">
       <div class="nav-logo-icon"><i class="fa-solid fa-bolt"></i></div>
       <div class="nav-logo-text">Eletro<span>Car</span></div>
     </div>
+    
+    <!-- MENU DESKTOP (só aparece em telas maiores) -->
     <div class="nav-links" id="nav-links-desktop">
       <a class="nav-link active" id="nl-home" onclick="navTo('home')">Início</a>
       <a class="nav-link" id="nl-cars" onclick="navTo('cars')">Carros</a>
@@ -687,20 +746,28 @@ tbody tr:hover{background:var(--g50)}
       <a class="nav-link" id="nl-how" onclick="navTo('how')">Como Funciona</a>
       <a class="nav-link" id="nl-contact" onclick="navTo('contact')">Contato</a>
     </div>
+    
     <div class="nav-actions">
       <a class="nav-admin-link" onclick="showPage('admin-login')"><i class="fa-solid fa-shield-halved"></i> Área do Funcionário</a>
       <button class="btn btn-outline btn-sm" onclick="navTo('login')"><i class="fa-regular fa-user"></i> Entrar</button>
       <button class="btn btn-primary btn-sm" onclick="navTo('register')">Criar Conta</button>
-      <button class="mobile-menu-btn" id="mobileMenuBtn" style="display:none"><i class="fa-solid fa-bars"></i></button>
+      
+      <!-- BOTÃO HAMBURGUER (só aparece no mobile) -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
-  <!-- Menu mobile (aparece quando clicar no botão) -->
+  
+  <!-- MENU MOBILE (dropdown que aparece quando clica no hamburguer) -->
   <div id="nav-links-mobile" class="nav-links-mobile">
     <a class="nav-link" onclick="navTo('home'); closeMobileMenu()">Início</a>
     <a class="nav-link" onclick="navTo('cars'); closeMobileMenu()">Carros</a>
     <a class="nav-link" onclick="navTo('map'); closeMobileMenu()">Mapa</a>
     <a class="nav-link" onclick="navTo('how'); closeMobileMenu()">Como Funciona</a>
     <a class="nav-link" onclick="navTo('contact'); closeMobileMenu()">Contato</a>
+    <hr style="margin:8px 0; border-color:#e5e7eb">
+    <a class="nav-link" onclick="navTo('login'); closeMobileMenu()"><i class="fa-regular fa-user"></i> Entrar</a>
+    <a class="nav-link" onclick="navTo('register'); closeMobileMenu()"><i class="fa-solid fa-user-plus"></i> Criar Conta</a>
+    <a class="nav-link" onclick="showPage('admin-login'); closeMobileMenu()"><i class="fa-solid fa-shield-halved"></i> Área do Funcionário</a>
   </div>
 </nav>
 
@@ -1347,33 +1414,67 @@ tbody tr:hover{background:var(--g50)}
 <script>
 // ===================== DADOS =====================
 
-// ===================== MENU MOBILE =====================
+// ===================== MENU MOBILE CORRIGIDO =====================
 function toggleMobileMenu() {
   const menu = document.getElementById('nav-links-mobile');
   if(menu) menu.classList.toggle('show');
 }
+
 function closeMobileMenu() {
   const menu = document.getElementById('nav-links-mobile');
   if(menu) menu.classList.remove('show');
 }
 
-function checkMobileMenu() {
-  const btn = document.getElementById('mobileMenuBtn');
+function checkAndFixMenu() {
+  const mobileBtn = document.getElementById('mobileMenuBtn');
   const desktopLinks = document.getElementById('nav-links-desktop');
-  if(window.innerWidth <= 768) {
-    if(btn) btn.style.display = 'flex';
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    // MODO CELULAR: esconde menu desktop, mostra botão hamburguer
+    if(mobileBtn) mobileBtn.style.display = 'flex';
     if(desktopLinks) desktopLinks.style.display = 'none';
+    const mobileMenu = document.getElementById('nav-links-mobile');
+    if(mobileMenu) mobileMenu.classList.remove('show');
   } else {
-    if(btn) btn.style.display = 'none';
+    // MODO DESKTOP: mostra menu desktop, esconde botão hamburguer
+    if(mobileBtn) mobileBtn.style.display = 'none';
     if(desktopLinks) desktopLinks.style.display = 'flex';
+    const mobileMenu = document.getElementById('nav-links-mobile');
+    if(mobileMenu) mobileMenu.classList.remove('show');
   }
 }
 
+// Inicialização do menu
 document.addEventListener('DOMContentLoaded', function() {
-  checkMobileMenu();
-  window.addEventListener('resize', checkMobileMenu);
+  // Configura o menu
+  checkAndFixMenu();
+  
+  // Adiciona evento de clique no botão hamburguer
   const btn = document.getElementById('mobileMenuBtn');
-  if(btn) btn.addEventListener('click', toggleMobileMenu);
+  if(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const menu = document.getElementById('nav-links-mobile');
+      if(menu) menu.classList.toggle('show');
+    });
+  }
+  
+  // Fecha o menu mobile ao clicar fora dele
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('nav-links-mobile');
+    const btn = document.getElementById('mobileMenuBtn');
+    if(menu && btn) {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    }
+  });
+  
+  // Monitora redimensionamento da tela
+  window.addEventListener('resize', function() {
+    checkAndFixMenu();
+  });
 });
 // ===================== FIM MENU MOBILE =====================
 
