@@ -1,0 +1,6 @@
+@EletroCarAPI_HostAddress = http://localhost:5186
+
+GET {{EletroCarAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
