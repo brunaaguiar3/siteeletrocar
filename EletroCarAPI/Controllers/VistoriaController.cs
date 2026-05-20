@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EletroCarAPI.Data;
 using EletroCarAPI.Models;
@@ -16,16 +16,33 @@ namespace EletroCarAPI.Controllers
             _context = context;
         }
 
-        // Listar todas as vistorias pendentes (para qualquer funcionário)
+        private IQueryable<Vistoria> VistoriasComDetalhes()
+        {
+            return _context.Vistorias
+                .Include(v => v.Reserva)
+                    .ThenInclude(r => r!.Cliente)
+                .Include(v => v.Reserva)
+                    .ThenInclude(r => r!.Veiculo);
+        }
+
+        // Listar vistorias pendentes (badge / contadores)
         [HttpGet("pendentes")]
         public async Task<IActionResult> GetVistoriasPendentes()
         {
-            var vistorias = await _context.Vistorias
+            var vistorias = await VistoriasComDetalhes()
                 .Where(v => v.Status == "Pendente")
-                .Include(v => v.Reserva)
-                    .ThenInclude(r => r.Cliente)
-                .Include(v => v.Reserva)
-                    .ThenInclude(r => r.Veiculo)
+                .OrderByDescending(v => v.DataSolicitacao)
+                .ToListAsync();
+
+            return Ok(vistorias);
+        }
+
+        // Listar todas as vistorias (painel do funcionário — histórico completo)
+        [HttpGet("todas")]
+        public async Task<IActionResult> GetTodasVistorias()
+        {
+            var vistorias = await VistoriasComDetalhes()
+                .OrderByDescending(v => v.DataSolicitacao)
                 .ToListAsync();
 
             return Ok(vistorias);
@@ -60,8 +77,8 @@ namespace EletroCarAPI.Controllers
             // Atualizar status da reserva
             reserva.Status = "Aguardando Vistoria";
 
-            // Atualizar status do veículo
-            var veiculo = await _context.Veiculos.FindAsync(vistoria.Reserva.VeiculoId);
+            // CORRIGIDO: usar reserva.VeiculoId diretamente (vistoria.Reserva seria null aqui pois ainda não foi salva)
+            var veiculo = await _context.Veiculos.FindAsync(reserva.VeiculoId);
             if (veiculo != null)
             {
                 veiculo.Status = "vistoria";
@@ -93,7 +110,6 @@ namespace EletroCarAPI.Controllers
 
             // Atualizar status do veículo
             var veiculo = await _context.Veiculos.FindAsync(vistoria.Reserva.VeiculoId);
-
             if (veiculo != null)
             {
                 veiculo.Status = "disponível";
@@ -108,7 +124,9 @@ namespace EletroCarAPI.Controllers
         [HttpPost("reprovar/{id}")]
         public async Task<IActionResult> ReprovarVistoria(int id, [FromBody] string motivo)
         {
-            var vistoria = await _context.Vistorias.FindAsync(id);
+            var vistoria = await _context.Vistorias
+                .Include(v => v.Reserva)
+                .FirstOrDefaultAsync(v => v.Id == id);
 
             if (vistoria == null)
             {
@@ -116,7 +134,19 @@ namespace EletroCarAPI.Controllers
             }
 
             vistoria.Status = "Reprovada";
-            vistoria.MotivoReprovacao = motivo;
+            vistoria.MotivoReprovacao = motivo ?? "";
+            vistoria.DataAprovacao = DateTime.Now;
+
+            if (vistoria.Reserva != null)
+            {
+                vistoria.Reserva.Status = "Vistoria Reprovada";
+
+                var veiculo = await _context.Veiculos.FindAsync(vistoria.Reserva.VeiculoId);
+                if (veiculo != null)
+                {
+                    veiculo.Status = "disponível";
+                }
+            }
 
             await _context.SaveChangesAsync();
 

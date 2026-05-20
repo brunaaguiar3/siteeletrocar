@@ -28,6 +28,7 @@ namespace EletroCarAPI.Controllers
                 {
                     success = true,
                     type = "cliente",
+                    id = cliente.Id,
                     nome = cliente.Nome,
                     email = cliente.Email,
                     cpf = cliente.CPF,
@@ -45,6 +46,7 @@ namespace EletroCarAPI.Controllers
                 {
                     success = true,
                     type = "funcionario",
+                    id = funcionario.Id,
                     nome = funcionario.Nome,
                     email = funcionario.Email,
                     nivel = funcionario.NivelAcesso

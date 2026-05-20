@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Eu\\Documents\\PIM 3 SEMESTRE\\ELETROCAR\\EletroCarAPI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Eu\\Documents\\PIM 3 SEMESTRE\\ELETROCAR\\EletroCarAPI\\EletroCarAPI.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EletroCarAPI.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Eu\\Documents\\PIM 3 SEMESTRE\\ELETROCAR\\EletroCarAPI\\Eletrofrontend\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Eletrofrontend\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Eu\\Documents\\PIM 3 SEMESTRE\\ELETROCAR\\EletroCarAPI\\Controllers\\VistoriaController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\VistoriaController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VistoriaController.cs",
+              "DocumentMoniker": "C:\\Users\\Eu\\Documents\\PIM 3 SEMESTRE\\ELETROCAR\\EletroCarAPI\\Controllers\\VistoriaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VistoriaController.cs",
+              "ToolTip": "C:\\Users\\Eu\\Documents\\PIM 3 SEMESTRE\\ELETROCAR\\EletroCarAPI\\Controllers\\VistoriaController.cs",
+              "RelativeToolTip": "Controllers\\VistoriaController.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAswIQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T18:31:41.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EletroCarAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\Eu\\Documents\\PIM 3 SEMESTRE\\ELETROCAR\\EletroCarAPI\\EletroCarAPI.csproj",
+              "RelativeDocumentMoniker": "EletroCarAPI.csproj",
+              "ToolTip": "C:\\Users\\Eu\\Documents\\PIM 3 SEMESTRE\\ELETROCAR\\EletroCarAPI\\EletroCarAPI.csproj",
+              "RelativeToolTip": "EletroCarAPI.csproj",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-19T16:34:26.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\Eu\\Documents\\PIM 3 SEMESTRE\\ELETROCAR\\EletroCarAPI\\Eletrofrontend\\index.html",
+              "RelativeDocumentMoniker": "Eletrofrontend\\index.html",
+              "ToolTip": "C:\\Users\\Eu\\Documents\\PIM 3 SEMESTRE\\ELETROCAR\\EletroCarAPI\\Eletrofrontend\\index.html",
+              "RelativeToolTip": "Eletrofrontend\\index.html",
+              "ViewState": "AgIAALkUAAAAAAAAAAAAABwVAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-05-19T16:29:17.978Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

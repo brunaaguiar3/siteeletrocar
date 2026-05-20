@@ -42,16 +42,16 @@ app.MapControllers();
 
 var frontendPath = Path.Combine(Directory.GetCurrentDirectory(), "Eletrofrontend");
 
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(frontendPath),
-    RequestPath = ""
-});
-
 app.UseDefaultFiles(new DefaultFilesOptions
 {
     DefaultFileNames = new List<string> { "index.html" },
     FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(frontendPath)
+});
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(frontendPath),
+    RequestPath = ""
 });
 
 app.Run();

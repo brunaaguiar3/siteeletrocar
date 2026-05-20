@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\EletroCarAPI",
+    "\\EletroCarAPI\\Controllers",
+    "\\EletroCarAPI\\Data",
+    "\\EletroCarAPI\\Eletrofrontend",
+    "\\EletroCarAPI\\Migrations",
+    "\\EletroCarAPI\\Models",
+    "\\EletroCarDB",
+    "\\EletroCarPrincipal"
+  ],
+  "SelectedNode": "\\EletroCarPrincipal\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}

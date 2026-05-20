@@ -17,10 +17,10 @@ namespace EletroCarAPI.Models
         public string? Marca { get; set; }
 
         [Column("autonomia")]
-        public int Autonomia { get; set; }
+        public string? Autonomia { get; set; }
 
         [Column("bateria")]
-        public string? Bateria { get; set; }  // ← pode ser string por causa do "%"
+        public string? Bateria { get; set; }
 
         [Column("status")]
         public string? Status { get; set; }

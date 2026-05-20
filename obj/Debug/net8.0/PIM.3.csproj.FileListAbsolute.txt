@@ -13,3 +13,13 @@ C:\Users\Eu\Documents\PIM 3 SEMESTRE\PIM.3\obj\Debug\net8.0\refint\PIM.3.dll
 C:\Users\Eu\Documents\PIM 3 SEMESTRE\PIM.3\obj\Debug\net8.0\PIM.3.pdb
 C:\Users\Eu\Documents\PIM 3 SEMESTRE\PIM.3\obj\Debug\net8.0\PIM.3.genruntimeconfig.cache
 C:\Users\Eu\Documents\PIM 3 SEMESTRE\PIM.3\obj\Debug\net8.0\ref\PIM.3.dll
+C:\Users\Eu\Documents\PIM 3 SEMESTRE\PIM.3\obj\Debug\net8.0\PIM.3.csproj.AssemblyReference.cache
+C:\Users\Eu\Documents\PIM 3 SEMESTRE\ELETROCAR\obj\Debug\net8.0\PIM.3.csproj.AssemblyReference.cache
+C:\Users\Eu\Documents\PIM 3 SEMESTRE\ELETROCAR\obj\Debug\net8.0\PIM.3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Eu\Documents\PIM 3 SEMESTRE\ELETROCAR\obj\Debug\net8.0\PIM.3.AssemblyInfoInputs.cache
+C:\Users\Eu\Documents\PIM 3 SEMESTRE\ELETROCAR\obj\Debug\net8.0\PIM.3.AssemblyInfo.cs
+C:\Users\Eu\Documents\PIM 3 SEMESTRE\ELETROCAR\obj\Debug\net8.0\PIM.3.csproj.CoreCompileInputs.cache
+C:\Users\Eu\Documents\PIM 3 SEMESTRE\ELETROCAR\obj\Debug\net8.0\PIM.3.sourcelink.json
+C:\Users\Eu\Documents\PIM 3 SEMESTRE\ELETROCAR\obj\Debug\net8.0\PIM.3.dll
+C:\Users\Eu\Documents\PIM 3 SEMESTRE\ELETROCAR\obj\Debug\net8.0\refint\PIM.3.dll
+C:\Users\Eu\Documents\PIM 3 SEMESTRE\ELETROCAR\obj\Debug\net8.0\PIM.3.pdb
